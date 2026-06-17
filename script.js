@@ -2,28 +2,35 @@
    COUNTER ANIMATION
 ========================= */
 
-const counters = document.querySelectorAll(".counter");
+const counters =
+    document.querySelectorAll(".counter");
 
 counters.forEach(counter => {
 
+    const target =
+        parseInt(counter.dataset.target);
+
+    let current = 0;
+
     const updateCounter = () => {
 
-        const target = +counter.getAttribute("data-target");
-        const current = +counter.innerText;
+        const increment =
+            Math.ceil(target / 50);
 
-        const increment = target / 100;
+        current += increment;
 
-        if (current < target) {
-
-            counter.innerText =
-                Math.ceil(current + increment);
-
-            setTimeout(updateCounter, 20);
-
-        } else {
+        if (current >= target) {
 
             counter.innerText = target;
+
+            return;
         }
+
+        counter.innerText = current;
+
+        requestAnimationFrame(
+            updateCounter
+        );
     };
 
     updateCounter();
@@ -98,20 +105,37 @@ if (scoreSlider && predictedScore) {
 
 function updateCountdown() {
 
+    const daysElement =
+        document.getElementById("days");
+
+    const hoursElement =
+        document.getElementById("hours");
+
+    const minutesElement =
+        document.getElementById("minutes");
+
+    if (
+        !daysElement ||
+        !hoursElement ||
+        !minutesElement
+    ) {
+        return;
+    }
+
     const examDate =
-        new Date("May 3, 2026 09:00:00").getTime();
+        new Date("2026-05-03T09:00:00");
 
     const now =
-        new Date().getTime();
+        new Date();
 
     const distance =
         examDate - now;
 
-    if (distance < 0) {
+    if (distance <= 0) {
 
-        document.getElementById("days").innerText = "000";
-        document.getElementById("hours").innerText = "00";
-        document.getElementById("minutes").innerText = "00";
+        daysElement.innerText = "000";
+        hoursElement.innerText = "00";
+        minutesElement.innerText = "00";
 
         return;
     }
@@ -138,28 +162,28 @@ function updateCountdown() {
             (1000 * 60)
         );
 
-    document.getElementById("days").innerText =
-        days;
-
-    document.getElementById("hours").innerText =
-        hours;
-
-    document.getElementById("minutes").innerText =
-        minutes;
+    daysElement.innerText = days;
+    hoursElement.innerText = hours;
+    minutesElement.innerText = minutes;
 }
-
-setInterval(updateCountdown, 1000);
 
 updateCountdown();
 
+setInterval(
+    updateCountdown,
+    1000
+);
+
 /* =========================
-   NAVBAR SHADOW ON SCROLL
+   NAVBAR SHADOW
 ========================= */
 
 window.addEventListener("scroll", () => {
 
     const navbar =
         document.querySelector(".navbar");
+
+    if (!navbar) return;
 
     if (window.scrollY > 50) {
 
@@ -168,7 +192,8 @@ window.addEventListener("scroll", () => {
 
     } else {
 
-        navbar.style.boxShadow = "none";
+        navbar.style.boxShadow =
+            "none";
     }
 
 });
@@ -201,7 +226,7 @@ buttons.forEach(btn => {
 });
 
 /* =========================
-   SCROLL REVEAL EFFECT
+   SCROLL REVEAL
 ========================= */
 
 const revealElements =
