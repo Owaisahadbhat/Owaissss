@@ -2,8 +2,7 @@
    COUNTER ANIMATION
 ========================= */
 
-const counters =
-    document.querySelectorAll(".counter");
+const counters = document.querySelectorAll(".counter");
 
 counters.forEach(counter => {
 
@@ -22,7 +21,6 @@ counters.forEach(counter => {
         if (current >= target) {
 
             counter.innerText = target;
-
             return;
         }
 
@@ -65,7 +63,6 @@ faqButtons.forEach(button => {
         if (!isOpen) {
 
             answer.style.display = "block";
-
         }
 
     });
@@ -105,66 +102,70 @@ if (scoreSlider && predictedScore) {
 
 function updateCountdown() {
 
-    const daysElement =
+    const days =
         document.getElementById("days");
 
-    const hoursElement =
+    const hours =
         document.getElementById("hours");
 
-    const minutesElement =
+    const minutes =
         document.getElementById("minutes");
 
-    if (
-        !daysElement ||
-        !hoursElement ||
-        !minutesElement
-    ) {
+    if (!days || !hours || !minutes) {
         return;
     }
 
     const examDate =
-        new Date("2026-05-03T09:00:00");
+        new Date(2026, 4, 3, 9, 0, 0);
 
     const now =
         new Date();
 
     const distance =
-        examDate - now;
+        examDate.getTime() -
+        now.getTime();
 
     if (distance <= 0) {
 
-        daysElement.innerText = "000";
-        hoursElement.innerText = "00";
-        minutesElement.innerText = "00";
+        days.textContent = "000";
+        hours.textContent = "00";
+        minutes.textContent = "00";
 
         return;
     }
 
-    const days =
+    const remainingDays =
         Math.floor(
             distance /
             (1000 * 60 * 60 * 24)
         );
 
-    const hours =
+    const remainingHours =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60 * 24))
-            /
+            (
+                distance %
+                (1000 * 60 * 60 * 24)
+            ) /
             (1000 * 60 * 60)
         );
 
-    const minutes =
+    const remainingMinutes =
         Math.floor(
-            (distance %
-                (1000 * 60 * 60))
-            /
+            (
+                distance %
+                (1000 * 60 * 60)
+            ) /
             (1000 * 60)
         );
 
-    daysElement.innerText = days;
-    hoursElement.innerText = hours;
-    minutesElement.innerText = minutes;
+    days.textContent =
+        remainingDays;
+
+    hours.textContent =
+        remainingHours;
+
+    minutes.textContent =
+        remainingMinutes;
 }
 
 updateCountdown();
@@ -204,7 +205,7 @@ window.addEventListener("scroll", () => {
 
 const buttons =
     document.querySelectorAll(
-        ".primary-btn,.secondary-btn,.pricing-btn,.cta-btn"
+        ".primary-btn,.secondary-btn,.pricing-btn,.cta-btn,.nav-btn,.mentor-btn"
     );
 
 buttons.forEach(btn => {
@@ -213,25 +214,23 @@ buttons.forEach(btn => {
 
         btn.style.transform =
             "translateY(-3px)";
-
     });
 
     btn.addEventListener("mouseleave", () => {
 
         btn.style.transform =
             "translateY(0px)";
-
     });
 
 });
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL REVEAL EFFECT
 ========================= */
 
 const revealElements =
     document.querySelectorAll(
-        ".pain-card,.mentor-card,.result-card,.pricing-card,.process-card,.chat-card"
+        ".pain-card,.mentor-card,.result-card,.pricing-card,.process-card,.chat-card,.stat-card"
     );
 
 function revealOnScroll() {
