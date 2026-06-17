@@ -1,5 +1,468 @@
 <!DOCTYPE html>
-<html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Med Clarivo+</title><link rel="stylesheet" href="style.css"></head>
-<body><header><h1>Med Clarivo+</h1></header><main><h2>admin-dashboard.html</h2></main>
-<script src="script.js"></script></body></html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Admin Dashboard | Med Clarivo+
+    </title>
+
+    <link rel="stylesheet"
+        href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div style="
+        display:flex;
+        min-height:100vh;
+        background:#08111f;
+    ">
+
+        <!-- SIDEBAR -->
+
+        <aside style="
+            width:280px;
+            background:#050b16;
+            padding:30px;
+            border-right:1px solid rgba(255,255,255,.08);
+        ">
+
+            <h2 style="
+                color:#38bdf8;
+                margin-bottom:40px;
+            ">
+                Admin Panel
+            </h2>
+
+            <ul style="
+                display:flex;
+                flex-direction:column;
+                gap:20px;
+            ">
+
+                <li><a href="#" style="color:white;">📊 Dashboard</a></li>
+
+                <li><a href="#" style="color:white;">👨‍🎓 Students</a></li>
+
+                <li><a href="#" style="color:white;">👨‍⚕️ Mentors</a></li>
+
+                <li><a href="#" style="color:white;">💳 Payments</a></li>
+
+                <li><a href="#" style="color:white;">📝 Blog Posts</a></li>
+
+                <li><a href="#" style="color:white;">📞 Leads</a></li>
+
+                <li><a href="#" style="color:white;">⚙ Settings</a></li>
+
+            </ul>
+
+        </aside>
+
+        <!-- MAIN CONTENT -->
+
+        <main style="
+            flex:1;
+            padding:40px;
+        ">
+
+            <h1>
+                Welcome Admin 👋
+            </h1>
+
+            <p style="
+                color:#94a3b8;
+                margin-top:10px;
+            ">
+                Manage students, mentors and leads.
+            </p>
+
+            <!-- STATS -->
+
+            <div class="stats-grid"
+                style="margin-top:40px;">
+
+                <div class="stat-card">
+
+                    <h2>523</h2>
+
+                    <p>
+                        Total Students
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2>128</h2>
+
+                    <p>
+                        Active Mentors
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2>76</h2>
+
+                    <p>
+                        New Leads
+                    </p>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <h2>₹4.2L</h2>
+
+                    <p>
+                        Monthly Revenue
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- LEADS TABLE -->
+
+            <div class="parent-card"
+                style="margin-top:40px;">
+
+                <h3>
+                    Recent Leads
+                </h3>
+
+                <table style="
+                    width:100%;
+                    margin-top:20px;
+                    border-collapse:collapse;
+                ">
+
+                    <tr>
+
+                        <th style="padding:15px;text-align:left;">
+                            Name
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Phone
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Target
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Status
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Rahul Sharma
+                        </td>
+
+                        <td style="padding:15px;">
+                            +91 9876543210
+                        </td>
+
+                        <td style="padding:15px;">
+                            NEET 2026
+                        </td>
+
+                        <td style="padding:15px;color:#22c55e;">
+                            New
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Neha Gupta
+                        </td>
+
+                        <td style="padding:15px;">
+                            +91 9876543210
+                        </td>
+
+                        <td style="padding:15px;">
+                            Dropper
+                        </td>
+
+                        <td style="padding:15px;color:#f59e0b;">
+                            Contacted
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+            <!-- STUDENT MANAGEMENT -->
+
+            <div class="parent-card"
+                style="margin-top:30px;">
+
+                <h3>
+                    Student Management
+                </h3>
+
+                <div class="stats-grid"
+                    style="margin-top:25px;">
+
+                    <div class="stat-card">
+                        <h2>523</h2>
+                        <p>Registered Students</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>481</h2>
+                        <p>Active Students</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>42</h2>
+                        <p>Pending Verification</p>
+                    </div>
+
+                    <div class="stat-card">
+                        <h2>92%</h2>
+                        <p>Retention Rate</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MENTOR MANAGEMENT -->
+
+            <div class="parent-card"
+                style="margin-top:30px;">
+
+                <h3>
+                    Mentor Management
+                </h3>
+
+                <table style="
+                    width:100%;
+                    margin-top:20px;
+                    border-collapse:collapse;
+                ">
+
+                    <tr>
+
+                        <th style="padding:15px;text-align:left;">
+                            Mentor
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Subject
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Students
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Status
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Dr. Rahul Sharma
+                        </td>
+
+                        <td style="padding:15px;">
+                            Biology
+                        </td>
+
+                        <td style="padding:15px;">
+                            150
+                        </td>
+
+                        <td style="padding:15px;color:#22c55e;">
+                            Active
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Dr. Priya Kapoor
+                        </td>
+
+                        <td style="padding:15px;">
+                            Chemistry
+                        </td>
+
+                        <td style="padding:15px;">
+                            120
+                        </td>
+
+                        <td style="padding:15px;color:#22c55e;">
+                            Active
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- PAYMENTS -->
+
+            <div class="parent-card"
+                style="margin-top:30px;">
+
+                <h3>
+                    Recent Payments
+                </h3>
+
+                <table style="
+                    width:100%;
+                    margin-top:20px;
+                    border-collapse:collapse;
+                ">
+
+                    <tr>
+
+                        <th style="padding:15px;text-align:left;">
+                            Student
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Plan
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Amount
+                        </th>
+
+                        <th style="padding:15px;text-align:left;">
+                            Status
+                        </th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Rahul Sharma
+                        </td>
+
+                        <td style="padding:15px;">
+                            Premium
+                        </td>
+
+                        <td style="padding:15px;">
+                            ₹6,999
+                        </td>
+
+                        <td style="padding:15px;color:#22c55e;">
+                            Paid
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td style="padding:15px;">
+                            Neha Gupta
+                        </td>
+
+                        <td style="padding:15px;">
+                            Basic
+                        </td>
+
+                        <td style="padding:15px;">
+                            ₹2,999
+                        </td>
+
+                        <td style="padding:15px;color:#22c55e;">
+                            Paid
+                        </td>
+
+                    </tr>
+
+                </table>
+
+            </div>
+
+            <!-- BLOG MANAGEMENT -->
+
+            <div class="parent-card"
+                style="margin-top:30px;">
+
+                <h3>
+                    Blog Management
+                </h3>
+
+                <div class="testimonial-grid"
+                    style="margin-top:25px;">
+
+                    <div class="chat-card">
+
+                        <h4>
+                            NEET 2026 Strategy Guide
+                        </h4>
+
+                        <p class="student-msg">
+                            Published • 1,250 Views
+                        </p>
+
+                    </div>
+
+                    <div class="chat-card">
+
+                        <h4>
+                            Best Books For NEET
+                        </h4>
+
+                        <p class="student-msg">
+                            Published • 980 Views
+                        </p>
+
+                    </div>
+
+                    <div class="chat-card">
+
+                        <h4>
+                            Dropper Success Tips
+                        </h4>
+
+                        <p class="student-msg">
+                            Draft • Not Published
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
