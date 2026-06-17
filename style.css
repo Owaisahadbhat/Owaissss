@@ -927,3 +927,47 @@ section{
         font-size:48px;
     }
 }
+/* PREMIUM SCROLLBAR */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#08111f;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#38bdf8;
+    border-radius:20px;
+}
+
+/* CARD HOVER */
+
+.stat-card,
+.process-card,
+.result-card,
+.pricing-card,
+.chat-card{
+    transition:.35s ease;
+}
+
+.stat-card:hover,
+.process-card:hover,
+.result-card:hover,
+.pricing-card:hover,
+.chat-card:hover{
+    transform:translateY(-8px);
+    border-color:#38bdf8;
+}
+
+/* SMOOTHER BUTTONS */
+
+.primary-btn,
+.secondary-btn,
+.pricing-btn,
+.cta-btn,
+.nav-btn,
+.mentor-btn{
+    transition:.3s ease;
+}
